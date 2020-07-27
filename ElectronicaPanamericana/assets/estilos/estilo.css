@@ -97,3 +97,32 @@ header .redes img{
     height: 25px;
     border-radius: 50%;
 }
+
+/*parte principal*/
+section{
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+}
+
+section .container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(2,200px) / repeat(4,200px);
+    grid-gap: 10px 25px;
+    justify-content: center;
+    align-content: center;
+}
+
+/*pie de página*/
+footer{
+    background-color: #00249b;
+    color: #ffffff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
