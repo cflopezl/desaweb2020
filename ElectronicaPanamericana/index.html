@@ -31,6 +31,11 @@
                 </ul>
             </div>
         </div>
+        <div class="banner">
+            <input type="button" value="<<" onClick="backward()">
+            <img id="slider" src="/assets/images/BANNER-KSB-300-1500x430.jpg" alt="">
+            <input type="button" value=">>" onClick="forward()">
+        </div>
     </header>
 
     <nav>
@@ -55,5 +60,27 @@
         <div>© Copyright Electrónica Panamericana 2019   |   Todos los derechos reservados Powered by Aumenta</div>
     </footer>
     
+    <script src="/assets/js/page.js"></script>
+
+    <script>        
+
+        var imgBanner = document.getElementById("slider");
+        imgBanner.addEventListener('mouseover', cambiarImagen);
+        imgBanner.addEventListener('mouseout', regresarImagen);
+
+        function cambiarImagen(){
+            imgBanner.style.border = "thick solid #000000";
+            document.body.style.cursor = 'pointer';
+        }
+
+        function regresarImagen(){ 
+            imgBanner.style.border = "none";
+            document.body.style.cursor = 'auto';
+        }
+
+
+        setInterval('forward()', 3000);
+
+    </script>
 </body>
 </html>
