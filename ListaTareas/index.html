@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>        
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <style>
+        .terminada{
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" >
+        <h3>{{ titulo }} Completado: {{completed}}/{{total}}</h3>
+        <div>
+            <input v-model="nuevaTarea" class="form-control" 
+            v-on:keyup.enter="agregar"
+            type="text" placeholder="Escribe una nueva tarea" name="" id="nueva">
+            <input v-on:click="agregar" type="button" value="Agregar">
+        </div>
+        <ul>
+            <li v-for="(tarea, indice) in tareas" v-on:click="marcar(tarea)"             
+            v-bind:class="{terminada: tarea.completed}">
+                {{ tarea.title }}         
+                    <a v-on:click="eliminar(indice)" href="#">X</a>        
+            </li>
+        </ul>     
+   </div>
+    
+    <script src="vue.js"></script>
+</body>
+</html>
